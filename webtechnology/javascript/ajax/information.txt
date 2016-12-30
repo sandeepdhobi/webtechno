@@ -1,0 +1,100 @@
+Ajax has following functionality.
+1] Update a webpage without reloading the wwebpage.
+2] Request data from server after the page has loaded.
+3] Receive data from server after page has loaded.
+4] Send data to server - in background.
+5] Ajax cant be run on cross domain. 
+6] It stand for Asynchronous javascript and xml
+7] with it ,it is posssible to load or refresh part  
+   of page.
+8] phases of ajax
+   
+   a)event occur on browser by user & it create XMLHttpRquest object and send XMLHttpRequest object.
+   b)object route throw net and reach to Server.On server XMLHttpRequest process and an response is generate and send back to browser by internet route.
+   c)process the returned data using javascript and and update the page content.
+9] Syntax for iE :
+	var xhttp;
+	if(window.XMLHttpRequest)
+	{
+	xhttp=new XMLHttpRequest();
+	}   
+	else
+	xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+10] modern browser dont allow acess across the domain 
+	for eg. an ajax example on w3scholls.com can open xml file located in w3scholls.com domain.
+11] for using ajax in loacalfost use ur file   
+    http.open("get","localhost/pathtofile"true);
+12] XMLHttpRequest() object method:
+	a)new XMLHttpRequest()  --for creating object
+	b)abort() ---cancel the current request.
+	c)getAllResponceHeader()---returns all header info
+	d)getResponseHeader()
+	e)open(method,url,async,user,pass)
+	f)send() --send the request to server used for GET request
+	g)send(string)  ---for post method
+	h)setRequestHeader() --adds a label /va;lue pair to the haeder to be sent
+
+13]XMLHttpRquest property:
+	a)onreadystatechange : define a function to be called whren the readyState propert changes.
+	b)readyState --- value 0:request not initialized
+					 value 1:server connection stablished
+					 value 2:request received
+					 value 3:processing request
+					 value 4:request finished and response is ready
+	c)responseText ----return the response data as string
+	d)responseXML -----return the response data as XML
+	e)status ---------- value 200:ok
+						value 403:forbidden
+						value 404:not found
+						and other also
+	f)statusText ------return the status text (eg. OK,Not Found)
+
+
+14]post properties ---a)file not cached
+					  b)post has no size limitation
+					  c)for sending user input which can contain unknown charcters.
+
+
+15] xhttp.open("GET","demo.asp",true);
+	xhttp.send();
+
+	---in this we get cached  dat , to avoid this we add unique ID to url.
+
+
+	xhttp.open("GET","demo.asp?t="+Math.random(),true);
+	xhttp.send();
+
+
+
+	for sendinfg information with GET method--->
+	  xhttp.open("GET","demo.asp?fname=henry&lname=ford",true);
+	  xhttp.send();
+
+16] Post request: 
+	  --
+	  xhttp.open("POST","demo.asp",true);
+	  xhttp.send();
+
+
+	 to post data like HTML form add an HTTP header with setRequestHeader() . specify the data u want to send in send() method.
+
+	 ---->
+
+	 xhttp.open("POST","demo.asp",true);
+	 xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	 xhttp.send("fname=henry"&"lname=ford");
+17] when u use async=False -donot write onreadystatechange 	
+    function 
+18] the onreadystatechange event is triggererd five times (0-4),
+	one time for each change in ready state.
+19] Using a callback function:
+		a) a callback function is a function passed as a parameter to another function.
+		b)if we have more than one ajax task in website then we should create one function for executing the XMLHttpRequest object and one callback function for each AJAX task. 
+20] Ajax is used to create more interactive application      with    PHP and XML,database
+
+
+
+
+
+
+

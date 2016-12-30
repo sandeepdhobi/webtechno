@@ -1,0 +1,1345 @@
+  PHP refernces of w3schols.com is so usefull.
+  The concatenation operator is just a dot (.). (If you're coming to PHP from JavaScript, the dot does the same thing for strings that + does in JavaScript.)
+
+
+1] PHP basic
+
+php(Hypertext preprocessor) is Open source server side scripting language.Its good tool for making interactive and dynamic webpages.
+Its competitor of Microsoft Asp.
+It is a core for Wordpress(Largest blogging system) and Facebook(Largest social Network).
+Latest version is PHP5 and its references are:
+   Array function 
+   calender function 
+   Date function
+   Directory function.
+   Error function 
+   Filesystem function
+   Filter function
+   FTP function
+   HTTP function
+   LibXML funtion
+   Mail function 
+   Math function
+   Misc function
+   Mysqli function
+   simple XML function
+   String function
+   XML parser function'
+   Zip function
+
+For PHP starting u should know HTML ,CSS, Javascript
+
+2] PHP Intro
+	
+   PHP file can contain HTML ,CSS ,JAVASCRIPT (This threee are called static file in laravel) .
+   PHP code are executed in server side and result are returned back to browser as plain HTML.
+
+   What can php do:
+   	php can generate dynamic page content.
+   	Php can open, read ,write ,delete and close file on server.
+   	PHp can collect form data.
+   	PHP can send and receive cookies.
+   	Php can add ,delete ,modify data on database.
+   	PHP can use to control user accesss.
+   	PHP can encrypt data.
+
+   	In php you can ouptput not only HTML but also images,PDF,XHTML,XML and even flash movies.
+   	To start with php we need a web host ie webserver ex XAMPP and MYSQL and PHP installed.
+   	so install websever -->install PHP --> install Mysql  in XAMPP all installed only.
+
+3] PHP syntax: 
+
+  In php all type of comment are /*  */,// and #
+  php statement enfd with ;
+  In PHP all keywords eg. if  else,while ,echo , etc. and classes , function ,user defined function are not case sensitive .
+  In php variable name are case sensitive.
+
+  $text="www.w3schools.com";
+  echo "I love $text <br>";
+  echo "I love " . $text;       both give output..
+  echo $x + $y;
+
+
+  $x=545;
+  $y=454;
+  echo "$x+$y"."<br>";   //output : 545+454
+  echo $x+$y;            //output:999
+
+  Php is loosly typed language as we  dont specify datatype in this other language..
+  Php has 3 type of variable ie static , global , local..
+    --varible defined in function are local varible and if used out off function generate error.
+    --global variable are accessed in function using global keyword.
+    --php also hold the global variable in GLOBALS array and can be update directly using $GLOBALS[variable name].
+    --when function got executed the local variable get deleted. thus by using static keyword we can keep the value of
+      local variable. see example....
+
+ echo and print are used to output data on screen.echo does'not have return value while print has return value of 1 so we can use print in exoression.echo can take multiple parameter while print has only one argument. 
+ echo "" == echo()
+ print "" == print()
+
+ Php has following datatype and recognize type automatically:
+ String,Integer,Float,Boolean,Array,Object,NULL,Resource..
+ The php var_dump() are used for variable type and value return.
+ If variable is created without any values then it is automatically assigned null values or $x=null;
+ resources are not data type they are just calling function for example database call for data.
+
+ $car=array("volvo","BMW","TOYTa");
+ var_dump($car); 
+
+ PHP string:
+ echo strlen("Hi I am sandeep");
+ echo str_word_count("hi how are you");
+ echo strrev("Hi whats going on ");
+ echo strpos("hello world" , "world");   --search for specific word in string if not found then return false.
+                                         --first character position in string are 1 not 0.
+ echo str_replace("world","dolly","Its change w-o-r-l-d world in this string to dolly");
+ many very very usefull function of string are available go to www.w3schools.com
+
+ PHP constant:
+  this can't be changed throughout script.its is globally accessed .it doen't
+  have $ sign .It also define case sensititvity.
+  define(name,value,case-insensititvity);
+
+ PHP operator:
+ all operator are same and ** are used for exponantial ie. $x**$y.all asignment are same as C.
+ === are checking identical variable ie also datatype of variable.
+ !== not identiacl.
+ <> not equal.
+ php also have all increment same as C.
+ logiacl operator are used to combine conditional statement ie and,or,xor,&&,||,!
+ for appending one string with other ie $x.=$y;
+ operator used in array are: +(union) ex. $x + $y , =(equilty) ex.$x==$y ,===,!=,<>,!==(not identical)
+ 
+4] PHP Loops:
+
+if statement
+if...else statement 
+if...elseif....else statement 
+switch statement
+
+
+<?php
+$favcolor = "red";
+
+switch ($favcolor) {
+    case "red":
+        echo "Your favorite color is red!";
+        break;
+    case "blue":
+        echo "Your favorite color is blue!";
+        break;
+    case "green":
+        echo "Your favorite color is green!";
+        break;
+    default:
+        echo "Your favorite color is neither red, blue, nor green!";
+}
+?>
+
+while 
+do...while 
+for 
+foreach : Its only applies to Array.
+
+<?php 
+$colors = array("red", "green", "blue", "yellow"); 
+
+foreach ($colors as $value) {
+echo "$value <br>";
+}
+?>
+
+5] PHP Function:
+
+   A function will not execute immediately when a page loads.
+   A function will be executed by a call to the function.
+   function name are case sensitive.
+
+   <?php
+   function writeMsg($arg1,$arg2) {
+   echo "Hello world!";
+   echo "The first arg are $arg1 and second argumemt are $arg2";
+   }
+
+   writeMsg("sandeep","pradeep"); // call the function
+   ?>
+
+   function setHeight($minheight = 50){}  ----default argument..
+
+6] Array:
+
+Indexed arrays - Arrays with a numeric index  --$cars = array("Volvo", "BMW", "Toyota");  or $cars[0]="volvo";
+Associative arrays - Arrays with named keys  ---$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43"); or 
+                                                $age['peter']="sandeep";
+Multidimensional arrays - Arrays containing one or more arrays ----
+
+   $cars = array("Volvo", "BMW", "Toyota");
+   echo count($cars);    ----count($arrayname) return size of array.
+   for($x = 0; $x < count($cars); $x++)
+    {
+    echo $cars[$x];
+    echo "<br>";}
+
+    foreach($age as $x => $x_value)    ----example of associative array.
+    {}
+
+
+
+
+$cars = array                       ------Multidimentional array
+  (
+  array("Volvo",22,18),
+  array("BMW",15,13),
+  array("Saab",5,2),
+  array("Land Rover",17,15)
+  );
+
+  echo $cars[0][0].": In stock: ".$cars[0][1].", sold: ".$cars[0][2].".<br>";
+
+  Sorting of array-----
+
+  sort() - sort arrays in ascending order
+  rsort() - sort arrays in descending order
+  asort() - sort associative arrays in ascending order, according to the value
+  ksort() - sort associative arrays in ascending order, according to the key
+  arsort() - sort associative arrays in descending order, according to the value
+  krsort() - sort associative arrays in descending order, according to the key
+
+     ----$cars = array("Volvo", "BMW", "Toyota");
+         sort($cars);
+
+     ----$numbers = array(4, 6, 2, 22, 11);
+         sort($numbers);                              ------Sort in ascending order.
+
+     ----$cars = array("Volvo", "BMW", "Toyota");
+         rsort($cars);                                 ------sort in descending order
+
+
+     ----$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+         asort($age);                                  -------sort in ascending order in associative array according
+                                                              to values.
+
+     ----$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+         ksort($age);                                  -----sort in ascending order associative array according to key.
+
+
+     ---- and also arsort() and krsort();
+     ---- also other very important array function see array refernces in w3scholls.com
+
+7] Superglobal variable:
+
+   Several predefined variables in PHP are "superglobals", which means that they are always accessible, regardless of scope - and you can access them from any function, class or file without having to do anything special.these are superglobal variable:
+
+   $GLOBALS
+   $_SERVER
+   $_REQUEST
+   $_POST
+   $_GET
+   $_FILES
+   $_ENV
+   $_COOKIE
+   $_SESSION
+
+   $GLOBALS : PHP stores all global variables in an array called $GLOBALS[index]. The index holds the name of the variable.these can use for updation of global variable directly in function().
+
+   $_SERVER : It is a PHP super global variable which holds information about headers, paths, and script locations.
+   ---
+   echo $_SERVER['PHP_SELF'];
+   echo "<br>";
+   echo $_SERVER['SERVER_NAME'];
+   echo "<br>";
+   echo $_SERVER['HTTP_HOST'];
+   echo "<br>";
+   echo $_SERVER['HTTP_REFERER'];
+   echo "<br>";
+   echo $_SERVER['HTTP_USER_AGENT'];
+   echo "<br>";
+   echo $_SERVER['SCRIPT_NAME'];
+
+   -----------And other very useful and important variable also in $_SERVER['']
+
+   $_REQUEST,$_GET,$_POST : 
+
+   PHP $_REQUEST is used to collect data after submitting an HTML form.
+   The example below shows a form with an input field and a submit button. When a user submits the data by clicking on "Submit", the form data is sent to the file specified in the action attribute of the <form> tag. In this example, we point to this file itself for processing form data. If you wish to use another PHP file to process form data, replace that with the filename of your choice. Then, we can use the super global variable $_REQUEST to collect the value of the input field:
+
+
+
+   https://phptraininginmumbai.wordpress.com/2012/12/21/what-is-the-difference-between-get-post-and-request-method/   ---link
+
+   In HTML to transfer records from one page to another page , attribute method is used in form tag.
+
+   i.e :
+
+   <form method="post" action="action.php">
+   data goes here .......
+   </form>
+   Now , In this case action.php is destination page where user will have records .
+
+   in PHP : there are 3 methods to retrieve data from receiving page.
+
+   1 ) $_GET
+
+   2) $_POST
+
+   3) R_REQUEST
+
+   $_GET :
+
+   $_GET is a super global array which is an inbuilt array. Which collects values from a form sent with method=”get” as well it collects values from URL also. ( e.g. http://www.domainname.com/pagename.php?data=123)
+
+   You can print $_GET with inbuilt function in php i.e ( print_r($_GET) ).
+
+   IMP : Information sent from this method will be visible in ( address bar of any browser ) and has limitation on characters .
+
+   As per W3C Community limitation can be extended up to 4000 characters
+
+   Myth: Search services will not index anything with a “?” in the URI.
+   Myth: URIs cannot be longer than 256 characters
+   for details : visit : About $_GET limitation :
+   You can read more details about $_GET.
+
+   $_POST :
+
+   $_POST is a super global array which is an inbuilt array. Which collects values from a form sent with method=”post”.
+
+   You can print $_GET with inbuilt function in php i.e ( print_r($_POST)  ).
+
+   IMP : Information received from POST method is always invisible in ( address bar of any browser ) . It has more limit on sending characters to action page.
+
+   This limitation can be set in php.ini file
+
+   Note: We can change by setting the POST_MAX_SIZE in the php.ini file . by default we will find this value with 8MB in most of the php.ini file.
+
+   $_REQUEST :
+
+   $_REQUEST is a super global array which is an inbuilt array. Which collects values from a form sent with  either method=”post” or method=”get” .
+
+   You can print $_REQUEST with inbuilt function in php i.e ( print_r($_REQUEST)  ).
+
+   IMP : One of the best way of getting data on action page , here we did not require to check that which method we have used to pass data from sending page.Even $_REQUEST get records from the COOKIE also
+
+
+
+   Both GET and POST create an array (e.g. array( key => value, key2 => value2, key3 => value3, ...)). This array holds key/value pairs, where keys are the names of the form controls and values are the input data from the user.
+
+   GET should NEVER be used for sending passwords or other sensitive information
+
+   Developers prefer POST for sending form data.
+
+8] PHP Form:
+   
+   The $_SERVER["PHP_SELF"] is a super global variable that returns the filename of the currently executing script.
+
+   The htmlspecialchars() function converts special characters to HTML entities. This means that it will replace HTML characters like < and > with &lt; and &gt;. This prevents attackers from exploiting the code by injecting HTML or Javascript code (Cross-site Scripting attacks) in forms.
+
+
+   The $_SERVER["PHP_SELF"] variable can be used by hackers!
+   If PHP_SELF is used in your page then a user can enter a slash (/) and then some Cross Site Scripting (XSS) commands to execute.
+   Cross-site scripting (XSS) is a type of computer security vulnerability typically found in Web applications. XSS enables attackers to inject client-side script into Web pages viewed by other users.
+
+   example on websie: http://www.w3schools.com/php/php_form_validation.asp
+
+   $_SERVER["PHP_SELF"] exploits can be avoided by using the htmlspecialchars() function.
+   ie. <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+
+    we can check each $_POST variable with the test_input() function
+
+    <?php
+    // define variables and set to empty values
+    $name = $email = $gender = $comment = $website = "";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = test_input($_POST["name"]);
+    $email = test_input($_POST["email"]);
+    $website = test_input($_POST["website"]);
+    $comment = test_input($_POST["comment"]);
+    $gender = test_input($_POST["gender"]);
+    }
+
+    function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+    }
+    ?>
+
+
+
+    Empty() method for validation:
+
+    <?php
+    // define variables and set to empty values
+    $nameErr = $emailErr = $genderErr = $websiteErr = "";
+    $name = $email = $gender = $comment = $website = "";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_POST["name"])) {
+    $nameErr = "Name is required";
+    } else {
+    $name = test_input($_POST["name"]);
+    }
+
+    if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+    } else {
+    $email = test_input($_POST["email"]);
+    }
+
+    if (empty($_POST["website"])) {
+    $website = "";
+    } else {
+    $website = test_input($_POST["website"]);
+    }
+
+    if (empty($_POST["comment"])) {
+    $comment = "";
+    } else {
+    $comment = test_input($_POST["comment"]);
+    }
+
+    if (empty($_POST["gender"])) {
+    $genderErr = "Gender is required";
+    } else {
+    $gender = test_input($_POST["gender"]);
+    }
+    }
+    ?>
+
+    See website:http://www.w3schools.com/php/php_form_required.asp
+
+
+
+
+    Validation of name: preg_match() function is used for pattern matching.
+
+    $name = test_input($_POST["name"]);
+    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+    $nameErr = "Only letters and white space allowed"; 
+    }
+
+
+
+   Validate Email-id : fulter_var() method is useful in email validation.
+
+   $email = test_input($_POST["email"]);
+   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+   $emailErr = "Invalid email format"; 
+   }
+
+
+
+
+   Validate URL :
+
+   $website = test_input($_POST["website"]);
+   if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
+   $websiteErr = "Invalid URL"; 
+   }
+
+   See site : http://www.w3schools.com/php/php_form_complete.asp
+
+
+9] PHP Advanced:
+   
+
+   PHP date and time:
+   <?php
+   echo "Today is " . date("Y/m/d") . "<br>";
+   echo "Today is " . date("Y.m.d") . "<br>";
+   echo "Today is " . date("Y-m-d") . "<br>";
+   echo "Today is " . date("l");
+   ?>
+
+   &copy; 2010-<?php echo date("Y");?>  --for current year copyright purpuses.
+
+   echo "The time is " . date("h:i:sa");
+     h - 12-hour format of an hour with leading zeros (01 to 12)
+     i - Minutes with leading zeros (00 to 59)
+     s - Seconds with leading zeros (00 to 59)
+     a - Lowercase Ante meridiem and Post meridiem (am or pm)
+
+   PHP date() function will return the current date/time of the server!
+
+   date_default_timezone_set("America/New_York");
+   echo "The time is " . date("h:i:sa");
+
+   $d=mktime(11, 14, 54, 8, 12, 2014);    -----mktime(hour,minute,second,month,day,year)
+   echo "Created date is " . date("Y-m-d h:i:sa", $d);
+
+
+   $d=strtotime("10:30pm April 15 2014");    ----- strtotime(time,now)----The PHP strtotime() function is used to
+                                                                          convert a human readable string to a Unix time.
+   echo "Created date is " . date("Y-m-d h:i:sa", $d);
+
+
+   <?php
+   $d=strtotime("tomorrow");
+   echo date("Y-m-d h:i:sa", $d) . "<br>";
+
+   $d=strtotime("next Saturday");
+   echo date("Y-m-d h:i:sa", $d) . "<br>";
+
+   $d=strtotime("+3 Months");
+   echo date("Y-m-d h:i:sa", $d) . "<br>";
+   ?>
+
+
+   <?php
+   $startdate = strtotime("Saturday");
+   $enddate = strtotime("+6 weeks", $startdate);
+
+   while ($startdate < $enddate) {
+   echo date("M d", $startdate) . "<br>";
+   $startdate = strtotime("+1 week", $startdate);
+   }
+   ?>
+
+
+   <?php
+   $d1=strtotime("July 04");
+   $d2=ceil(($d1-time())/60/60/24);
+   echo "There are " . $d2 ." days until 4th of July.";
+   ?>
+
+
+   The include (or require) statement takes all the text/code/markup that exists in the specified file and copies it into the file that uses the include statement.
+
+   The include and require statements are identical, except upon failure:
+   require will produce a fatal error (E_COMPILE_ERROR) and stop the script
+   include will only produce a warning (E_WARNING) and the script will continue
+
+   So, if you want the execution to go on and show users the output, even if the include file is missing, use the include statement. Otherwise, in case of FrameWork, CMS, or a complex PHP application coding, always use the require statement to include a key file to the flow of execution. 
+
+------------
+
+   <?php include 'footer.php';?>
+
+   <?php
+   echo "<p>Copyright &copy; 1999-" . date("Y") . " W3Schools.com</p>";     footer.php file.
+   ?>
+-------------
+
+
+-------------
+<body>
+
+<div class="menu">
+<?php include 'menu.php';?>                 including menu.php.
+</div>
+
+<h1>Welcome to my home page!</h1>
+<p>Some text.</p>
+<p>Some more text.</p>
+
+</body>
+
+menu.php---
+<?php
+echo '<a href="/default.asp">Home</a> -
+<a href="/html/default.asp">HTML Tutorial</a> -
+<a href="/css/default.asp">CSS Tutorial</a> -
+<a href="/js/default.asp">JavaScript Tutorial</a> -
+<a href="default.asp">PHP Tutorial</a>';
+?>
+---------------
+
+Use require when the file is required by the application.
+Use include when the file is not required and application should continue when file is not found.
+
+ ----------------------Further from tutorialpoint.com
+
+
+echo readfile("webdictionary.txt");  ---readfile() function is useful if all you want to do is open up a file and read its contents.
+fopen(filename,mode);    
+differnt moide:
+  --r  : open file on read mode and place pointer at the the begining of file.
+  --r+ : open the file in read and write both and the pointer at begining.
+  --w  : If file does not exist then create new file else  open file for wrte only and erase all data and put file pointer at the 
+         begining
+  --w+ : If file does not exist then create new file else  open file for wrte and read both only and erase all data and put file pointer
+         at the begining
+  --a  : Opens the file for writing only.Places the file pointer at the end of the file.If files does not exist then it attempts to 
+         create a file. here data not going to erase.
+
+  --a+ : Opens the file for writing only.Places the file pointer at the end of the file.If files does not exist then it attempts to 
+         create a file. here data not going to erase.
+  --x  : create a new file for write only.return false and error if file already exist.
+  --x+ : create a new file for write and read both.return false and error if file already exist.
+  --feof() : This function check for end of file. Its useful for looping unknown sized file.
+         --------------------
+         <?php
+         $myfile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
+         // Output one line until end-of-file
+         while(!feof($myfile)) {
+         echo fgets($myfile) . "<br>";
+         }
+         fclose($myfile);
+         ?>
+         ---------------------
+  ---The fgetc() function is used to read a single character from a file.After a call to the fgetc() function, the file pointer moves to 
+     the next character.
+                ----------while(!feof($myfile)) {echo fgetc($myfile);}
+
+
+  -- PHP File Upload :
+          In your "php.ini" file set  file_uploads = On
+          HTML form:
+          --------------------------
+
+          <html>
+          <body>
+
+          <form action="upload.php" method="post" enctype="multipart/form-data">
+          Select image to upload:
+          <input type="file" name="fileToUpload" id="fileToUpload">
+          <input type="submit" value="Upload Image" name="submit">
+          </form>
+
+          </body>
+          </html>
+          ---------------------------
+          Make sure that the form uses method="post"
+          The form also needs the following attribute: enctype="multipart/form-data". It specifies which content-type to use when submitting the form
+          Without the requirements above, the file upload will not work.
+
+          Other things to notice:
+
+          The type="file" attribute of the <input> tag shows the input field as a file-select control, with a "Browse" button next to the input control
+
+
+
+          create upload.php.--->
+          ---------------------------------------
+          <?php
+          $target_dir = "uploads/";
+          $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+          $uploadOk = 1;
+          $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+          // Check if image file is a actual image or fake image
+          if(isset($_POST["submit"])) {
+          $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+          if($check !== false) {
+          echo "File is an image - " . $check["mime"] . ".";
+          $uploadOk = 1;
+          } else {
+          echo "File is not an image.";
+          $uploadOk = 0;
+          }
+          }
+          // Check if file already exists
+          if (file_exists($target_file)) {
+          echo "Sorry, file already exists.";
+          $uploadOk = 0;
+          }
+          // Check file size
+          if ($_FILES["fileToUpload"]["size"] > 500000) {
+          echo "Sorry, your file is too large.";
+          $uploadOk = 0;
+          }
+          // Allow certain file formats
+          if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+          && $imageFileType != "gif" ) {
+          echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+          $uploadOk = 0;
+          }
+          // Check if $uploadOk is set to 0 by an error
+          if ($uploadOk == 0) {
+          echo "Sorry, your file was not uploaded.";
+          // if everything is ok, try to upload file
+          } else {
+          if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+          echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+          } else {
+          echo "Sorry, there was an error uploading your file.";
+          }
+          }
+          ?>
+          -------------------------------------------
+          $target_dir = "uploads/" - specifies the directory where the file is going to be placed
+          $target_file specifies the path of the file to be uploaded
+          $uploadOk=1 is not used yet (will be used later)
+          $imageFileType holds the file extension of the file
+          Next, check if the image file is an actual image or a fake image
+
+          You will need to create a new directory called "uploads" in the directory where "upload.php" file resides. The uploaded files will be saved there.
+
+          certain limitation applied on file.  :---------->
+
+          if (file_exists($target_file)) {                 -----check if file already exist in upload directory.
+          echo "Sorry, file already exists.";
+          $uploadOk = 0;
+          }
+
+
+          if ($_FILES["fileToUpload"]["size"] > 500000) {    --------limit file size.
+          echo "Sorry, your file is too large.";
+          $uploadOk = 0;
+          }
+
+          if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"         ----limit file type.
+          && $imageFileType != "gif" ) {
+          echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+          $uploadOk = 0;
+          }
+
+
+         If an attempt to open a file fails then fopen returns a value of false otherwise it returns a file pointer which is used for further reading or writing to that file.
+         After making a changes to the opened file it is important to close it with the fclose() function. The fclose() function requires a file pointer as its argument and then returns true when the closure succeeds or false if it fails.
+
+
+
+        Once a file is opened using fopen() function
+        fread()---require two argument first file pointer which is getted by fopen as it return pointer and second is size of file upto 
+                  we want to read
+        filesize()  ---take filename as argument and return its size in byte.
+        fclose() ---take arg as file name.
+
+  --------------------------------------------------
+        $filename = "tmp.txt";
+         $file = fopen( $filename, "r" );
+         
+         if( $file == false ) {
+            echo ( "Error in opening file" );
+            exit();
+         }
+         
+         $filesize = filesize( $filename );
+         $filetext = fread( $file, $filesize );
+         fclose( $file );
+  -------------------------------------------------------
+
+
+
+
+        A new file can be written or text can be appended to an existing file using the PHP fwrite() function. This function requires two arguments specifying a file pointer and the string of data that is to be written. Optionally a third integer argument can be included to specify the length of the data to write.
+        file_exist() function which takes file name as an argument and return true or false.
+  -----------------------------------------------------
+  $filename = "/home/user/guest/newfile.txt";
+  $file = fopen( $filename, "w" );
+
+  if( $file == false ) {
+  echo ( "Error in opening new file" );
+  exit();
+  }
+  fwrite( $file, "This is  a simple test\n" );
+  fclose( $file );
+  ----------------------------------------------------
+
+
+
+
+
+  In fact you hardly need to create your own PHP function because there are already more than 1000 of built-in library functions created for different area and you just need to call them according to your requirement.
+  You can return more than one value from a function using return array(1,2,3,4).
+
+  dynamic calling to a function :
+-------------------------------------
+   function sayHello() {
+            echo "Hello<br />";
+         }
+         
+         $function_holder = "sayHello";
+         $function_holder();
+-------------------------------------
+
+
+PHP cookies:
+
+Cookies are text files stored on the client computer and they are kept of use tracking purpose. PHP transparently supports HTTP cookies.
+A cookie is often used to identify a user. A cookie is a small file that the server embeds on the user's computer. Each time the same computer requests a page with a browser, it will send the cookie too. With PHP, you can both create and retrieve cookie values.
+
+There are three steps involved in identifying returning users −
+Server script sends a set of cookies to the browser. For example name, age, or identification number etc.
+Browser stores this information on local machine for future use.
+When next time browser sends any request to web server then it sends those cookies information to the server and server uses that information to identify the user.
+
+Cookies are usually set in an HTTP header (although JavaScript can also set a cookie directly on a browser).
+A PHP script that sets a cookie might send headers that look something like this −
+------------------------------------------
+HTTP/1.1 200 OK
+Date: Fri, 04 Feb 2000 21:03:38 GMT
+Server: Apache/1.3.9 (UNIX) PHP/4.0b3
+Set-Cookie: name=xyz; expires=Friday, 04-Feb-07 22:03:38 GMT; 
+                 path=/; domain=tutorialspoint.com
+Connection: close
+Content-Type: text/html
+-----------------------------------------
+As you can see, the Set-Cookie header contains a name value pair
+
+
+
+If the browser is configured to store cookies, it will then keep this information until the expiry date. If the user points the browser at any page that matches the path and domain of the cookie, it will resend the cookie to the server.The browser's headers might look something like this −
+-------------------------------------------
+GET / HTTP/1.0
+Connection: Keep-Alive
+User-Agent: Mozilla/4.6 (X11; I; Linux 2.2.6-15apmac ppc)
+Host: zink.demon.co.uk:1126
+Accept: image/gif, */*
+Accept-Encoding: gzip
+Accept-Language: en
+Accept-Charset: iso-8859-1,*,utf-8
+Cookie: name=xyz
+--------------------------------------------
+A PHP script will then have access to the cookie in the environmental variables $_COOKIE or $HTTP_COOKIE_VARS[] which holds all cookie names and values. 
+
+
+
+PHP provided setcookie() function to set a cookie. This function requires upto six arguments and should be called before <html> tag.
+setcookie(name, value, expire, path, domain, security);
+   --Name − This sets the name of the cookie and is stored in an environment variable called HTTP_COOKIE_VARS. 
+   --Value − This sets the value of the named variable and is the content that you actually want to store.
+   --Expiry − This specify a future time in seconds since 00:00:00 GMT on 1st Jan 1970. After this time cookie will become inaccessible. 
+              If this parameter is not set then cookie will automatically expire when the Web Browser is closed.
+   --Path − This specifies the directories for which the cookie is valid. A single forward slash character permits the cookie to be
+            valid for all directories.
+   --Domain − This can be used to specify the domain name in very large domains and must contain at least two periods to be valid. All 
+              cookies are only valid for the host and domain which created them.
+   --Security − This can be set to 1 to specify that the cookie should only be sent by secure transmission using HTTPS otherwise set to 
+                0 which mean cookie can be sent by regular HTTP.
+----------------------------------
+<?php
+$cookie_name = "user";
+$cookie_value = "John Doe";
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+?>                           ---------------------The setcookie() function must appear BEFORE the <html> tag.
+                              --------------------The value of the cookie is automatically URLencoded when sending the cookie, and 
+                                                  automatically decoded when received (to prevent URLencoding, use setrawcookie() instead).
+
+
+<html>
+<body>
+
+<?php
+if(!isset($_COOKIE[$cookie_name])) {
+    echo "Cookie named '" . $cookie_name . "' is not set!";
+} else {
+    echo "Cookie '" . $cookie_name . "' is set!<br>";
+    echo "Value is: " . $_COOKIE[$cookie_name];
+}
+?>
+
+</body>
+</html>
+----------------------------------
+
+Accessing cookies:
+-------------------------------------------
+<?php
+         echo $_COOKIE["name"]. "<br />";
+         
+         /* is equivalent to */
+         echo $HTTP_COOKIE_VARS["name"]. "<br />";
+         
+         echo $_COOKIE["age"] . "<br />";
+         
+         /* is equivalent to */
+         echo $HTTP_COOKIE_VARS["name"] . "<br />";
+      ?>
+-------------------------------------------
+
+--------
+<?php
+         if( isset($_COOKIE["name"]))                  ------------for checking if cookies is set
+            echo "Welcome " . $_COOKIE["name"] . "<br />";
+         
+         else
+            echo "Sorry... Not recognized" . "<br />";
+?>
+---------
+
+Deleting Cookie with PHP:  
+Officially, to delete a cookie you should call setcookie() with the name argument only but this does not always work well,
+--------------------
+<?php
+   setcookie( "name", "", time()- 60, "/","", 0);
+   setcookie( "age", "", time()- 60, "/","", 0);
+?>
+<html>
+   
+   <head>
+      <title>Deleting Cookies with PHP</title>
+   </head>
+   
+   <body>
+      <?php echo "Deleted Cookies" ?>
+   </body>
+   18602331234
+</html>
+-------------------
+
+
+
+SESSION:
+
+Sessions are a simple way to store data for individual users against a unique session ID.
+This can be used to persist state information between page requests.
+Session IDs are normally sent to the browser via session cookies and the ID is used to retrieve existing session data.
+Unlike a cookie, the information is not stored on the users computer.
+
+A session creates a file in a temporary directory on the server where registered session variables and their values are stored. This data will be available to all pages on the site during that visit.
+The location of the temporary file is determined by a setting in the php.ini file called session.save_path. Before using any session variable make sure you have setup this path.
+
+When a session is started following things happen −
+  --PHP first creates a unique identifier for that particular session which is a random string of 32 hexadecimal numbers such as 
+    3c7foj34c3jj973hjkop2fc937e3443.
+  --A cookie called PHPSESSID is automatically sent to the user's computer to store unique session identification string.
+  --A file is automatically created on the server in the designated temporary directory and bears the name of the unique identifier 
+    prefixed by sess_ ie sess_3c7foj34c3jj973hjkop2fc937e3443.
+
+
+When a PHP script wants to retrieve the value from a session variable, PHP automatically gets the unique session identifier string from the PHPSESSID cookie and then looks in its temporary directory for the file bearing that name and a validation can be done by comparing both values.
+
+A session ends when the user loses the browser or after leaving the site, the server will terminate the session after a predetermined period of time, commonly 30 minutes duration.
+
+When you work with an application, you open it, do some changes, and then you close it. This is much like a Session. The computer knows who you are. It knows when you start the application and when you end. But on the internet there is one problem: the web server does not know who you are or what you do, because the HTTP address doesn't maintain state.
+Session variables solve this problem by storing user information to be used across multiple pages (e.g. username, favorite color, etc). By default, session variables last until the user closes the browser.
+So; Session variables hold information about one single user, and are available to all pages in one application.
+
+Tip: If you need a permanent storage, you may want to store the data in a database.
+Note: The session_start() function must be the very first thing in your document. Before any HTML tags.
+
+
+Starting a PHP Session :
+    --A PHP session is easily started by making a call to the session_start() function.This function first checks if a session is 
+      already started and if none is started then it starts one. It is recommended to put the call to session_start() at the beginning of the page.
+
+    --Session variables are stored in associative array called $_SESSION[]. These variables can be accessed during lifetime of a session.
+    --The following example starts a session then register a variable called counter that is incremented each time the page is visited 
+      during the session.
+    --Make use of isset() function to check if session variable is already set or not.
+
+    -------------------------------
+    <?php
+    session_start();
+
+    if( isset( $_SESSION['counter'] ) ) {
+    $_SESSION['counter'] += 1;
+    }else {
+    $_SESSION['counter'] = 1;
+    }
+
+    $msg = "You have visited this page ".  $_SESSION['counter'];
+    $msg .= "in this session.";
+    ?>
+
+    <html>
+
+    <head>
+    <title>Setting up a PHP session</title>
+    </head>
+
+    <body>
+    <?php  echo ( $msg ); ?>
+    </body>
+
+    </html>
+
+  ----------------------------------
+
+  Destroying session:
+
+  --A PHP session can be destroyed by session_destroy() function. This function does not need any argument and a single call can destroy 
+    all the session variables. If you want to destroy a single session variable then you can use unset() function to unset a session variable.
+  
+  --unset($_SESSION['counter']);  ---------- for unset single variable
+  --session_destroy();            ----------for destroying entire session
+
+  You don't need to call start_session() function to start a session when a user visits your site if you can set session.auto_start variable to 1 in php.ini file.
+
+
+  Sessions without cookies:
+  There may be a case when a user does not allow to store cookies on their machine. So there is another method to send session ID to the browser.
+  Alternatively, you can use the constant SID which is defined if the session started. If the client did not send an appropriate session cookie, it has the form session_name=session_id. Otherwise, it expands to an empty string. Thus, you can embed it unconditionally into URLs.
+
+The following example demonstrates how to register a variable, and how to link correctly to another page using SID.
+--------------------------------------
+<?php
+   session_start();
+   
+   if (isset($_SESSION['counter'])) {
+      $_SESSION['counter'] = 1;
+   }else {
+      $_SESSION['counter']++;
+   }
+   
+   $msg = "You have visited this page ".  $_SESSION['counter'];
+   $msg .= "in this session.";
+   
+   echo ( $msg );
+?>
+
+<p>
+   To continue  click following link <br />
+   
+   <a  href = "nextpage.php?<?php echo htmlspecialchars(SID); ?>">
+</p>
+-------------------------------------
+
+The htmlspecialchars() may be used when printing the SID in order to prevent XSS related attacks.
+
+
+
+
+
+PHP Filter : 
+  --Validating data = Determine if the data is in proper form.
+  --Sanitizing data = Remove any illegal character from the data.
+
+  The filter_list() function can be used to list what the PHP filter extension offers:
+  ----------------------
+  <?php
+  foreach (filter_list() as $id =>$filter) {
+      echo '<tr><td>' . $filter . '</td><td>' . filter_id($filter) . '</td></tr>';
+  }
+  ?>
+  ----------------------
+
+  --
+  PHP filter_var() Function
+  The filter_var() function both validate and sanitize data.
+
+  The filter_var() function filters a single variable with a specified filter. It takes two pieces of data:
+  ---The variable you want to check
+  ---The type of check to use
+  
+  The following example uses the filter_var() function to remove all HTML tags from a string:
+  ----------------
+  <?php
+  $str = "<h1>Hello World!</h1>";
+  $newstr = filter_var($str, FILTER_SANITIZE_STRING);
+  echo $newstr;
+  ?>
+  ----------------
+
+  --------------------------                        -------validate if variable of type integer.
+  <?php
+  $int = 100;
+
+  if (!filter_var($int, FILTER_VALIDATE_INT) === false) {
+  echo("Integer is valid");
+  } else {
+  echo("Integer is not valid");
+  }
+  ?>
+  ---------------------------
+  --if (filter_var($int, FILTER_VALIDATE_INT) === 0 || !filter_var($int, FILTER_VALIDATE_INT) === false){} --to solve problem with zero
+  --$ip = "127.0.0.1";
+    if (!filter_var($ip, FILTER_VALIDATE_IP) === false)     --validating ip address.
+    
+    $ip = "2001:0db8:85a3:08d3:1319:8a2e:0370:7334";
+    if (!filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6) === false){}
+
+--validating email:
+---------------------------
+$email = "john.doe@example.com";
+
+// Remove all illegal characters from email
+$email = filter_var($email, FILTER_SANITIZE_EMAIL);
+
+// Validate e-mail
+if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+    echo("$email is a valid email address");
+} else {
+    echo("$email is not a valid email address");
+}
+---------------------------
+
+--validating URL:
+----------------------------------------
+<?php
+$url = "http://www.w3schools.com";
+
+// Remove all illegal characters from a url
+$url = filter_var($url, FILTER_SANITIZE_URL);
+
+// Validate url
+if (!filter_var($url, FILTER_VALIDATE_URL) === false) {
+    echo("$url is a valid URL");
+} else {
+    echo("$url is not a valid URL");
+}
+?>
+------------------------------------------
+
+
+
+Error handling in PHP:
+-----------------------------------------
+if(!file_exists("welcome.txt")) {
+  die("File not found");
+} else {
+  $file=fopen("welcome.txt","r");
+}
+-----------------------------------------        ----it will continue script and not stop when error occured.
+
+practice error handle and Exception handling..by w3schools.com
+
+
+
+
+10] Mysql and php connectivity:
+
+What is MySQL?
+MySQL is a database system used on the web
+MySQL is a database system that runs on a server
+MySQL is ideal for both small and large applications
+MySQL is very fast, reliable, and easy to use
+MySQL uses standard SQL
+MySQL compiles on a number of platforms
+MySQL is free to download and use
+MySQL is developed, distributed, and supported by Oracle Corporation
+MySQL is named after co-founder Monty Widenius's daughter: My 
+
+
+PHP 5 and later can work with a MySQL database using:
+  MySQLi extension (the "i" stands for improved)
+  PDO (PHP Data Objects)
+
+-------------
+Both MySQLi and PDO have their advantages:
+PDO will work on 12 different database systems, where as MySQLi will only work with MySQL databases.
+So, if you have to switch your project to use another database, PDO makes the process easy. You only have to change the connection string and a few queries. With MySQLi, you will need to rewrite the entire code - queries included.
+Both are object-oriented, but MySQLi also offers a procedural API.
+Both support Prepared Statements. Prepared Statements protect from SQL injection, and are very important for web application security.
+
+
+
+Open a Connection to MySQL
+-----------------------------------
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+die("Connection failed: " . $conn->connect_error);
+} 
+echo "Connected successfully";
+?>
+-----------------------------------
+
+--Note on the object-oriented example above: $connect_error was broken until PHP 5.2.9 and 5.3.0. If you need to ensure compatibility 
+  with PHP versions prior to 5.2.9 and 5.3.0, use the following code instead:
+  // Check connection
+  if (mysqli_connect_error()) {
+     die("Database connection failed: " . mysqli_connect_error());  }
+ 
+--(MySQLi Procedural)
+-----------------------------------------
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password);
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+echo "Connected successfully";
+?>
+-----------------------------------------
+
+PDO example also there on w3schools but not suitable for me.
+
+
+
+--close the connection--
+
+Example (MySQLi Object-Oriented)
+$conn->close();
+
+Example (MySQLi Procedural)                            so we prefer mysqli procedural.
+mysqli_close($conn);
+
+Example (PDO)
+$conn = null;
+
+
+
+
+------creating DB----------using mysqli procedural and further all example using this only.
+--------------------------------------------
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Create database
+$sql = "CREATE DATABASE myDB";
+if (mysqli_query($conn, $sql)) {
+    echo "Database created successfully";
+} else {
+    echo "Error creating database: " . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?>
+-------------------------------------------
+
+
+
+-------creating table------
+------------------------------------------
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// sql to create table
+$sql = "CREATE TABLE MyGuests (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+firstname VARCHAR(30) NOT NULL,
+lastname VARCHAR(30) NOT NULL,
+email VARCHAR(50),
+reg_date TIMESTAMP
+)";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Table MyGuests created successfully";
+} else {
+    echo "Error creating table: " . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?>
+------------------------------------------------
+
+
+-------Inserting values into table------------
+------------------------------------------------------
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('John', 'Doe', 'john@example.com')";
+
+if (mysqli_query($conn, $sql)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?>
+-------------------------------------------------------
+
+
+
+
+--------get id of last record -----------
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY
+
+-----Inserting multiplae value in table------
+$sql = "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('John', 'Doe', 'john@example.com');";
+$sql .= "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('Mary', 'Moe', 'mary@example.com');";
+$sql .= "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('Julie', 'Dooley', 'julie@example.com')";
+
+if ($conn->multi_query($sql) === TRUE) {
+    echo "New records created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+
+
+
+
+
+
+Compared to executing SQL statements directly, prepared statements have two main advantages:
+--Prepared statements reduces parsing time as the preparation on the query is done only once (although the statement is executed 
+  multiple times)
+--Bound parameters minimize bandwidth to the server as you need send only the parameters each time, and not the whole query
+--Prepared statements are very useful against SQL injections, because parameter values, which are transmitted later using a different 
+  protocol, need not be correctly escaped. If the original statement template is not derived from external input, SQL injection cannot occur.
+
+  -------------------------------------
+  <?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// prepare and bind
+$stmt = $conn->prepare("INSERT INTO MyGuests (firstname, lastname, email) VALUES (?, ?, ?)");
+$stmt->bind_param("sss", $firstname, $lastname, $email);
+
+// set parameters and execute
+$firstname = "John";
+$lastname = "Doe";
+$email = "john@example.com";
+$stmt->execute();
+
+$firstname = "Mary";
+$lastname = "Moe";
+$email = "mary@example.com";
+$stmt->execute();
+
+$firstname = "Julie";
+$lastname = "Dooley";
+$email = "julie@example.com";
+$stmt->execute();
+
+echo "New records created successfully";
+
+$stmt->close();
+$conn->close();
+?>
+--------------------------------------
+
+"INSERT INTO MyGuests (firstname, lastname, email) VALUES (?, ?, ?)"
+In our SQL, we insert a question mark (?) where we want to substitute in an integer, string, double or blob value.
+look at the bind_param() function:
+$stmt->bind_param("sss", $firstname, $lastname, $email);
+The "sss" argument lists the types of data that the parameters are.
+i - integer
+d - double
+s - string
+b - BLOB
+
+

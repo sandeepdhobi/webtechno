@@ -1,0 +1,40 @@
+1.Introduction:
+
+Three main requirement of any Intelligent system:
+1)human like expertise in specific domain
+2)adapt and learn in changing envirement.
+3)making decision and taking action
+
+Component of soft computing :
+1)Neural network : For learning and adaption ie. recognize pattern
+2)Fuzzy set theory : For uncertainty and human like reasoning implementation ie. knowledge and decision making 
+3)Evolutionary algorithm : For finding optimum solution. ie Genetic Algorithm.
+--Combination of any two technique generate Hybrid soft computing ststem.
+
+Neural Network:
+1)Artificial neural network inspired by Biological nn.ANN composed of many processing elememnt called neuran.
+  Have application of data clustring,pattern recognization and data classification.
+
+Fuzzy set theory:
+1)deal with incomplete,imprecise,uncertain(vague) like brain as human brain do.Fuzzy Inference system(FIS) uses fuzzy 
+  logic to map an input space to an output space.It uses if - then logic for selection.It lacks the ability of learning and adaption.
+
+Evolutionary Algorithm:
+1)  EA is subset of Evoltionary computation.GA is search and optimization technique and applied when search space is
+    too large 
+
+Differnce between hardcomputing and softcomputing:
+
+     Hard computing                                                                        Soft computing
+
+1) Its conventional type and work with preciuse data             1)It work with Imprecious and uncertain data.
+2) They require program to be written.                           2)They evolve there own model and program.
+3) Its model free												 3)Its model free.
+4) It require exact data for problem solving					 4)It can deal with incomplete,noisy and uncertain
+                                                                   data
+5)It uses two value logic										 5)It work with multivalue logic like fuzzy logic.
+6)It perform sequential computation								 6)It perform parallel computation like NN.
+7)Output is precise 										     7)Output is approximate.
+8)Its based on crisp logic,binary								 8)Its based on Fuzzy,EA,NN.
+9)Its not fault tollerent										 9)Its fault tollerent.
+
